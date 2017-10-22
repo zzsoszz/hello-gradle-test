@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75628bdf-f3e6-46e4-9a2e-d374718e1868" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/groovy/HelloWorld.groovy" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/all.gradle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/android.gradle" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/hell-gradle-test-1.0-SNAPSHOT.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/hello-gradle-test_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/hello-gradle-test_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/hello-gradle-test_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/hello-gradle-test_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all.gradle" afterPath="$PROJECT_DIR$/all.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -52,6 +47,12 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="application" type="c8890929:TasksNode$1" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hello-gradle-test" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="distribution" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -64,18 +65,18 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+            <state relative-caret-position="383">
+              <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="all.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/all.gradle">
+      <file leaf-file-name="AbstractCopyTask.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../../tools/gradle-4.3-rc-2/lib/gradle-core-4.3.jar!/org/gradle/api/tasks/AbstractCopyTask.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            <state relative-caret-position="270">
+              <caret line="274" column="5" lean-forward="false" selection-start-line="274" selection-start-column="5" selection-end-line="274" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -84,18 +85,8 @@
       <file leaf-file-name="HelloWorld.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/groovy/HelloWorld.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="android.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="175">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -333,9 +324,9 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6034576707410" />
+        <entry key="$PROJECT_DIR$" value="3017334929242" />
         <entry key="$PROJECT_DIR$/all.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="2183713170" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3997991760" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -532,6 +523,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SearchEverywhereHistoryKey" value="dependen&#9;FILE&#9;jar://E:/bxdev/tools/gradle-4.3-rc-2/lib/gradle-core-api-4.3.jar!/org/gradle/api/artifacts/ModuleDependency.class" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -639,14 +631,6 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="build" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
-      <module name="hell-gradle-test" />
-      <setting name="path" value="file://$PROJECT_DIR$/build.gradle" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="file://$PROJECT_DIR$" />
-      <setting name="debug" value="false" />
-    </configuration>
     <configuration name="hell-gradle-test [apkdist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -676,6 +660,23 @@
         <option name="taskNames">
           <list>
             <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+    </configuration>
+    <configuration name="hello-gradle-test [distZip]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="distZip" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -716,24 +717,27 @@
       </ExternalSystemSettings>
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Groovy.build" />
-      <item index="1" class="java.lang.String" itemvalue="Gradle.hell-gradle-test [build]" />
-      <item index="2" class="java.lang.String" itemvalue="Gradle.hell-gradle-test [apkdist]" />
-      <item index="3" class="java.lang.String" itemvalue="Gradle.hello-gradle-test [hello]" />
-      <item index="4" class="java.lang.String" itemvalue="Gradle.hello-gradle-test [run]" />
+      <item index="0" class="java.lang.String" itemvalue="Gradle.hell-gradle-test [build]" />
+      <item index="1" class="java.lang.String" itemvalue="Gradle.hell-gradle-test [apkdist]" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.hello-gradle-test [hello]" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.hello-gradle-test [run]" />
+      <item index="4" class="java.lang.String" itemvalue="Gradle.hello-gradle-test [distZip]" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.hello-gradle-test [run]" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.hello-gradle-test [hello]" />
-        <item index="2" class="java.lang.String" itemvalue="Gradle.hell-gradle-test [apkdist]" />
-        <item index="3" class="java.lang.String" itemvalue="Gradle.hell-gradle-test [build]" />
-        <item index="4" class="java.lang.String" itemvalue="Groovy.build" />
+        <item index="0" class="java.lang.String" itemvalue="Gradle.hello-gradle-test [distZip]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.hello-gradle-test [run]" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.hello-gradle-test [hello]" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.hell-gradle-test [apkdist]" />
+        <item index="4" class="java.lang.String" itemvalue="Gradle.hell-gradle-test [build]" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -743,12 +747,12 @@
       <option name="presentableId" value="Default" />
       <updated>1508659153453</updated>
       <workItem from="1508659157161" duration="2831000" />
-      <workItem from="1508663071820" duration="3928000" />
+      <workItem from="1508663071820" duration="9917000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6759000" />
+    <option name="totallyTimeSpent" value="12748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -770,6 +774,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -811,14 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/classes/groovy/main/HelloWorld.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-75">
@@ -826,14 +823,6 @@
           <folding>
             <element signature="e#0#1161#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/HelloWorld.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -845,18 +834,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/HelloWorld.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/all.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
+        <state relative-caret-position="-1325">
           <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../tools/gradle-4.3-rc-2/lib/gradle-core-api-4.3.jar!/org/gradle/api/Project.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#7699#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../tools/gradle-4.3-rc-2/lib/gradle-core-4.3.jar!/org/gradle/api/tasks/AbstractCopyTask.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="274" column="5" lean-forward="false" selection-start-line="274" selection-start-column="5" selection-end-line="274" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../tools/gradle-4.3-rc-2/lib/gradle-core-api-4.3.jar!/org/gradle/api/tasks/TaskCollection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../tools/gradle-4.3-rc-2/lib/gradle-core-api-4.3.jar!/org/gradle/api/artifacts/dsl/DependencyHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="948">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../tools/gradle-4.3-rc-2/lib/gradle-core-api-4.3.jar!/org/gradle/api/artifacts/ModuleDependency.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        <state relative-caret-position="383">
+          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -914,7 +963,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>hello-gradle-test_test|hello-gradle-test</last-edited>
+          <last-edited>hello-gradle-test</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

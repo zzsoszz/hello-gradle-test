@@ -1,0 +1,16 @@
+def printFile (filename) {
+	def targetFile = new File("e:/1.txt");
+	targetFile.eachLine{   
+	  String oneLine ->  
+	   	println oneLine  
+    }
+}
+
+def  getVersionNameAdvanced(){  
+   defxmlFile = project.file("AndroidManifest.xml")  
+   defrootManifest = new XmlSlurper().parse(xmlFile)  
+   returnrootManifest['@android:versionName']    
+}  
+ext{
+    printFile = this.&printFile  
+}

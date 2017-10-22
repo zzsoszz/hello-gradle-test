@@ -1,3 +1,5 @@
+import java.util.function.Predicate
+
 group 'demo'
 version '1.0-SNAPSHOT'
 
@@ -38,6 +40,11 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
+
+
+
+
+
 /*
  * 调用任务
  */
@@ -50,7 +57,28 @@ apkdistconf {
 }
 
 tasks.getByName("run") {
-    doLast{
+    doLast {
+
+
+    }
+}
+
+
+
+
+gradle.beforeProject {
+	project->
+		println "hello before project:" +project
+}
+
+gradle.buildFinished {
+	result->
+		println "hello result:" +result
+}
+
+gradle.taskGraph.whenReady  {
+	graph->
+        println "fff"
         project.getConfigurations().each {
             println it.getName()
             it.getDependencies().each {
@@ -58,8 +86,12 @@ tasks.getByName("run") {
                 println it.getName()
                 println "getDependencies end"
             }
+            Closure c=  {
+                return  it.name=='groovy-all22'
+            };
+            it.getDependencies().removeIf(c)
         }
-    }
 }
+
 
 mainClassName = 'HelloWorld'

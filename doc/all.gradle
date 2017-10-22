@@ -1,0 +1,507 @@
+//apply plugin: 'com.android.application'
+//
+//android {
+//    compileSdkVersion 25
+//    buildToolsVersion "26.0.2"
+//    defaultConfig {
+//        applicationId "com.example.zzsoszz.myapplication"
+//        minSdkVersion 15
+//        targetSdkVersion 25
+//        versionCode 1
+//        versionName "1.0"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//    }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
+//}
+//
+//dependencies {
+//    compile fileTree(dir: 'libs', include: ['*.jar'])
+//    compile 'com.android.support:appcompat-v7:25.3.1'
+//    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+//    testCompile 'junit:junit:4.12'
+//}
+//
+//
+//
+//
+//
+//task copyAllDependencies(type: Copy) {
+//    from configurations
+//    into 'allLibs'
+//}
+//
+//
+////configurations {
+////    compile.exclude files("appcompat-v7-25.3.1.aar")
+////}
+//
+//class HelloWorldTask extends DefaultTask {
+//    //@Optional，表示在配置该Task时，message是可选的。
+//    String message = 'I am jjx'
+//    //@TaskAction表示该Task要执行的动作,即在调用该Task时，hello()方法将被执行
+//    @TaskAction
+//    def hello(){
+//        println "hello world $message"
+//    }
+//}
+//
+//
+////hello使用了默认的message值
+//task hello2(type:HelloWorldTask)
+//
+////重新设置了message的值
+//task helloOne(type:HelloWorldTask){
+//    message ="I am a android developer"
+//}
+//
+//
+//task hello {
+//    doLast{
+//        def myTree = fileTree("src");
+//        project.getConfigurations().each {
+//            println it.getName()
+//            it.each {
+//                println it.getAbsoluteFile()
+//            }
+//        }
+//    }
+//}
+//
+//
+//
+//
+//class GreetingPluginExtension {
+//    String message
+//    String greeter
+//}
+//
+//class GreetingPlugin implements Plugin<Project> {
+//    void apply(Project project) {
+//        def extension = project.extensions.create('greeting', GreetingPluginExtension)
+//        project.task('hellohello') {
+//            doLast {
+//                println "${extension.message} from ${extension.greeter}"
+//            }
+//        }
+//    }
+//}
+//
+//apply plugin: GreetingPlugin
+//
+//// Configure the extension using a DSL block
+//greeting {
+//    message = 'Hi'
+//    greeter = 'Gradle'
+//}
+//
+//
+//
+//
+//class ApkDistPlugin implements Plugin<Project> {
+//
+//    @Override
+//    void apply(Project project) {
+//        project.task('apkdist') << {
+//            println 'hello, world!'
+//        }
+//    }
+//}
+//
+//apply plugin: ApkDistPlugin
+//
+//
+//
+//apply plugin: 'java-library'
+//apply from: rootProject.getRootDir().getAbsolutePath() + "/utils.gradle"
+//repositories {
+//    jcenter()
+//}
+//
+//dependencies {
+//    api 'org.apache.commons:commons-math3:3.6.1'
+//    implementation 'com.google.guava:guava:23.0'
+//    testImplementation 'junit:junit:4.12'
+//}
+//
+//project.setDescription("eeeeeeeeeeee");
+//
+//def  testClosure(int a1,String b1, Closure closure){
+//  closure() //调用闭包
+//}
+//
+//
+//task hello {
+//
+//
+//	def aMap = ['key1':'value1','key2':true]
+//	def aList = [5,'string',true]
+//	println project.getClass().toString()
+//	println aList
+//	println aMap
+//	println aMap.key1
+//
+//	def aRange = 1..5
+//	println aRange.from
+//	println aRange.to
+//
+//
+//	def aClosure = {  String param1, int param2 ->
+//	    println"this is  "+param1+"  "+ param2
+//	}
+//
+//	aClosure("p1",2)
+//
+//
+//	def greeting = { "Hello, $it!" }
+//	println greeting('Patrick') == 'Hello, Patrick!'
+//
+//
+//	//public static <T> List<T> each(List<T> self, Closure closure)
+//	//each函数调用的圆括号不见了！原来，Groovy中，当函数的最后一个参数是闭包的话，可以省略圆括号。比如
+//	def iamList = [1,2,3,4,5]  //定义一个List
+//	iamList.each {  //调用它的each，这段代码的格式看不懂了吧？each是个函数，圆括号去哪了？
+//	      println it
+//	}
+//
+//	//那么调用的时候，就可以免括号！
+//	testClosure (4, "test", {
+//	   println "i am in closure"
+//	} )
+//
+//	//对Map的findAll而言，Closure可以有两个参数。findAll会将Key和Value分别传进去。并且，Closure返回true，表示该元素是自己想要的。返回false表示该元素不是自己要找的。
+//	def cMap=[k1:'value1',k2:'value2'];
+//	def result=cMap.findAll {key,value->
+//		if(key=='k2')
+//		{
+//			return true;
+//		}
+//		return false;
+//	}
+//	println result
+//
+//
+//	//1.  读文件
+//	def targetFile = new File("e:/1.txt");
+//	targetFile.eachLine{
+//	  String oneLine ->
+//	   	println oneLine
+//    }
+//    //2.  写文件
+//    def srcFile = new File("e:/1.txt");
+//	def targetFile2 = new File("e:/2.txt");
+//	targetFile2.withOutputStream{ os->
+//	  srcFile.withInputStream{ ins->
+//	      os << ins
+//	  }
+//	}
+//
+//
+//
+//
+//	//第一步，创建XmlSlurper类
+//	def xparser = new XmlSlurper()
+//	def targetFile3 = new File("e:/1.xml")
+//	//轰轰的GPath出场
+//	groovy.util.slurpersupport.GPathResult gpathResult =xparser.parse(targetFile3)
+//	def book4 = gpathResult.value.books.book[3]
+//	def author = book4.author
+//	println author.text()
+//	//assert author.text() == ' Manuel De Cervantes '
+//	//author.@id == '4'
+//	//author.@id.toInteger() == 4
+//	//好了。GPath就说到这。再看个例子。我在使用Gradle的时候有个需求，就是获取AndroidManifest.xml版本号（versionName）。有了GPath，一行代码搞定，请看：
+//	//def androidManifest = newXmlSlurper().parse("AndroidManifest.xml")
+//	//println androidManifest['@android:versionName']
+//	//或者
+//	//println androidManifest.@'android:versionName'
+//
+//}
+//
+//
+//
+//
+//task test1 {
+//	println "i am "+gradle
+//}
+//
+//gradle.beforeProject {
+//	project->
+//		println "hello before project:" +project
+//}
+//
+//gradle.buildFinished {
+//	result->
+//		println "hello result:" +result
+//}
+//
+//gradle.taskGraph.whenReady  {
+//	graph->
+//		println "hello graph :" +graph
+//}
+//
+//
+//
+//
+//
+//
+//task copyAllDependencies(type: Copy) {
+//    from configurations
+//    into 'allLibs'
+//}
+//
+//
+////configurations {
+////    compile.exclude files("appcompat-v7-25.3.1.aar")
+////}
+//
+//class HelloWorldTask extends DefaultTask {
+//    //@Optional，表示在配置该Task时，message是可选的。
+//    @Optional
+//    String message = 'I am jjx'
+//    //@TaskAction表示该Task要执行的动作,即在调用该Task时，hello()方法将被执行
+//    @TaskAction
+//    def hello(){
+//        println "hello world $message"
+//    }
+//}
+//
+//
+////hello使用了默认的message值
+//task hello2(type:HelloWorldTask)
+//
+////重新设置了message的值
+//task helloOne(type:HelloWorldTask){
+//    message ="I am a android developer"
+//}
+//
+//
+//task hello {
+//    doLast{
+//        def myTree = fileTree("src");
+//        project.getConfigurations().each {
+//            println it.getName()
+//            it.each {
+//                println it.getAbsoluteFile()
+//            }
+//        }
+//    }
+//}
+//
+//
+//
+//
+
+
+
+
+//1.用闭包来实现单方法接口：
+interface Test{
+    def one(String a)
+}
+def test = {it.concat('b')} as Test
+assert test.one('a') == 'ab'
+
+
+//2.用闭包来实现多方法接口：
+interface X{void f();void g(int n);void h(String s, int n);}
+def x = {Object[] args -> println "method called with $args"} as X
+
+x.f()
+x.g(1)
+x.h("hello", 2)
+
+
+//3.用map来实现多方法接口：
+//def impl = [
+//        i: 10,
+//        hasNext: { impl.i>0 },
+//        next: { impl.i-- }
+//];
+//def iter= impl as Iterator
+//while(iter.hasNext()) println iter.next()
+
+
+//4.只实现需要的接口方法
+interface X2  { void f(); void g(int n); void h(String s, int n); }
+
+def x2 = [ f: {println "f called"} ] as X2
+x2.f()
+//x2.g()    // NPE here
+// 对于map实现的多方法的接口。我们仅需要对需要实现的方法，在map中进行声明即可。对于没有声明的方法，如果调用的话。会出现异常。
+
+
+map = [  
+    // 实现FileFilter.accept(File)方法.  
+    accept: { file -> file.path ==~ /.*\.(css|png)$/ }  
+] as FileFilter  
+new File('c:/temp').listFiles(map).each {  
+    println it.path  
+}  
+
+
+filter = { it.path ==~ /.*\.jpg$/ }  
+new File('c:/temp').listFiles(filter as FileFilter).each { file ->  
+    println file.path  
+}  
+
+
+
+
+
+
+
+
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+group = 'com.some.project'
+version = '1.0.2.0'
+description = 'Update Server'
+mainClassName = 'com.some.project.updateserver.client.Client'
+
+defaultTasks 'compileJava', 'jar'
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+allprojects {
+    tasks.withType(Compile) {
+        options.debug = true
+        options.compilerArgs = ['-Xlint:all']
+    }
+}
+
+dependencies {
+    compile "$commonsCodecGroup:commons-codec:$commonsCodecVersion"
+    compile "$commonsConfigurationGroup:commons-configuration:$commonsConfigurationVersion"
+    compile "$commonsLangGroup:commons-lang:$commonsLangVersion"
+    compile "$commonsLoggingGroup:commons-logging:$commonsLoggingVersion"
+    compile "$cxfGroup:cxf-bundle-minimal:$cxfVersion"
+    compile "$cxfGroup:cxf-rt-databinding-jaxb:$cxfVersion"
+    compile "$cxfGroup:cxf-rt-frontend-jaxrs:$cxfVersion"
+    compile "$cxfGroup:cxf-rt-transports-common:$cxfVersion"
+    compile "$cxfGroup:cxf-rt-transports-http:$cxfVersion"
+    compile "$jacksonGroup:jackson-jaxrs:$jacksonVersion"
+    compile "$jmockitGroup:jmockit:$jmockitVersion"
+    compile "$logBackGroup:logback-classic:$logBackVersion"
+    compile "$logBackGroup:logback-core:$logBackVersion"
+    compile "$servletGroup:servlet-api:$servletVersion"
+    compile "$slf4jGroup:slf4j-api:$slf4jVersion"
+    compile "$springGroup:spring-aop:$springVersion"
+    compile "$springGroup:spring-asm:$springVersion"
+    compile "$springGroup:spring-beans:$springVersion"
+    compile "$springGroup:spring-context:$springVersion"
+    compile "$springGroup:spring-core:$springVersion"
+    compile "$springGroup:spring-expression:$springVersion"
+    compile "$springGroup:spring-tx:$springVersion"
+    compile "$springGroup:spring-web:$springVersion"
+    compile "$wsRestfulGroup:jsr311-api:$wsRestfulVersion"
+
+    testCompile "$junitGroup:junit:$junitVersion"
+}
+
+repositories {
+    mavenCentral()
+}
+
+task clientJar(type: Jar, description: 'Assembles a jar archive for running a simple client against the Update Server.') {
+    appendix = 'client'
+    from sourceSets.main.output
+    exclude('applicationContext.xml')
+    exclude('com/some/project/json')
+    exclude('com/some/project/updateserver/jaxrs')
+    exclude('com/some/project/updateserver/oauth')
+    exclude('com/some/project/updateserver/resource')
+    exclude('com/some/project/updateserver/util/ManifestHash*')
+}
+
+task modelJar(type: Jar, description: 'Assembles a jar archive for reference by other projects that need to access the API model of Update Server.') {
+    appendix = 'model'
+    from sourceSets.main.output.classesDir
+    exclude('applicationContext.xml')
+    exclude('update-server-client.properties')
+    exclude('com/some/project/json')
+    exclude('com/some/project/updateserver/client')
+    exclude('com/some/project/updateserver/jaxrs')
+    exclude('com/some/project/updateserver/oauth')
+    exclude('com/some/project/updateserver/resource')
+}
+
+jar {
+    description = 'Assembles the relevant archive files for Update Server'
+    dependsOn clientJar, modelJar
+    exclude('update-server-client.properties')
+    exclude('com/some/project/updateserver/client')
+}
+
+test {
+    testLogging.exceptionFormat 'full'
+    testLogging {
+        events 'passed'
+        minGranularity = 3
+        stackTraceFilters 'groovy', 'entry_point', 'truncate'
+        showStandardStreams = true
+        debug {
+            events 'started'
+        }
+    }
+}
+
+run {
+    description = 'Runs the Update Server Client application'
+    jvmArgs '-client'
+    // optional args can be specified
+    // args 'name1', 'value1'
+}
+
+distZip {
+    archiveName "$project.name-client.zip"
+    exclude('**/aopalliance-*.jar')
+    exclude('**/asm-3.3.jar')
+    exclude('**/bcprov-jdk*.jar')
+    exclude('**/commons-codec-*.jar')
+    exclude('**/commons-httpclient-*.jar')
+    exclude('**/cxf-api-*.jar')
+    exclude('**/cxf-common-utilities-*.jar')
+    exclude('**/cxf-rt-bindings-*.jar')
+    exclude('**/cxf-rt-core*.jar')
+    exclude('**/geronimo-*.jar')
+    exclude('**/isorelax-*.jar')
+    exclude('**/jaxb-*.jar')
+    exclude('**/jcip-annotations-*.jar')
+    exclude('**/jcl-over-slf4j-*.jar')
+    exclude('**/jettison-*.jar')
+    exclude('**/jetty-*.jar')
+    exclude('**/jmockit-*.jar')
+    exclude('**/joda-time-*.jar')
+    exclude('**/jul-to-slf4j-*.jar')
+    exclude('**/log4j-over-slf4j-*.jar')
+    exclude('**/logback-*.jar')
+    exclude('**/mimepull-*.jar')
+    exclude('**/msv-core-*.jar')
+    exclude('**/not-yet-commons-*.jar')
+    exclude('**/opensaml-*.jar')
+    exclude('**/openws-*.jar')
+    exclude('**/relaxngDatatype-*.jar')
+    exclude('**/saaj-*.jar')
+    exclude('**/serializer-*.jar')
+    exclude('**/servlet-api-*.jar')
+    exclude('**/slf4j-api*.jar')
+    exclude('**/spring-*.jar')
+    exclude('**/stax-*.jar')
+    exclude('**/woodstox-*.jar')
+    exclude('**/wssj4j-*.jar')
+    exclude('**/xalan-*.jar')
+    exclude('**/xmlbeans-*.jar')
+    exclude('**/xml-resolver-*.jar')
+    exclude('**/xmlschema-*.jar')
+    exclude('**/xmlsec-*.jar')
+    exclude('**/xmltooling-*.jar')
+    exclude('**/xsdlib-*.jar')
+}
