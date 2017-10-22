@@ -4,7 +4,7 @@ version '1.0-SNAPSHOT'
 apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'com.asgradle.apkdist'
-
+apply plugin: 'application'
 sourceCompatibility = 1.8
 
 repositories {
@@ -28,8 +28,13 @@ buildscript {
 }
 
 
+ext {
+    gson_version = "2.3.1"
+}
+
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    compile "com.google.code.gson:gson:$gson_version"
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
@@ -44,14 +49,17 @@ apkdistconf {
     destDir 'your-distribution-directory'
 }
 
-task hello {
+tasks.getByName("run") {
     doLast{
         project.getConfigurations().each {
             println it.getName()
             it.getDependencies().each {
-                println it.getGroup()
+                println "getDependencies start"
+                println it.getName()
+                println "getDependencies end"
             }
         }
     }
 }
 
+mainClassName = 'HelloWorld'
