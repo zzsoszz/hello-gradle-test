@@ -13,7 +13,9 @@ repositories {
     mavenCentral()
 }
 
-
+/*
+ * 用于gralde插件
+ */
 buildscript {
     repositories {
         mavenLocal()
@@ -41,3 +43,15 @@ apkdistconf {
     }
     destDir 'your-distribution-directory'
 }
+
+task hello {
+    doLast{
+        project.getConfigurations().each {
+            println it.getName()
+            it.getDependencies().each {
+                println it.getGroup()
+            }
+        }
+    }
+}
+
