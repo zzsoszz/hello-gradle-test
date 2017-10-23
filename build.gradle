@@ -43,6 +43,15 @@ dependencies {
 
 
 
+sourceSets{
+    apkdistconfsource  {
+        java {
+            srcDirs = ['apkdistconfsource']
+            compileClasspath += sourceSets.main.compileClasspath
+            compileClasspath += fileTree("libs")
+        }
+    }
+}
 
 
 /*
@@ -53,7 +62,7 @@ apkdistconf {
         println 'hello, ' + name
         return name
     }
-    destDir 'your-distribution-directory'
+    destDir sourceSets.apkdistconfsource
 }
 
 tasks.getByName("run") {

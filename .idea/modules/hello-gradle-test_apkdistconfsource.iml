@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="hello-gradle-test:apkdistconfsource" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="demo" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/../../out/apkdistconfsource/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../apkdistconfsource">
+      <sourceFolder url="file://$MODULE_DIR$/../../apkdistconfsource" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../src/apkdistconfsource">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/apkdistconfsource/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/apkdistconfsource/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../libs/commons-basic-1.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-all:2.3.11" level="project" />
+  </component>
+</module>

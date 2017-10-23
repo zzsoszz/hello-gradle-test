@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hello-gradle-test.iml" filepath="$PROJECT_DIR$/.idea/modules/hello-gradle-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hello-gradle-test_apkdistconfsource.iml" filepath="$PROJECT_DIR$/.idea/modules/hello-gradle-test_apkdistconfsource.iml" group="hello-gradle-test" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hello-gradle-test_main.iml" filepath="$PROJECT_DIR$/.idea/modules/hello-gradle-test_main.iml" group="hello-gradle-test" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hello-gradle-test_test.iml" filepath="$PROJECT_DIR$/.idea/modules/hello-gradle-test_test.iml" group="hello-gradle-test" />
     </modules>
