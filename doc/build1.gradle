@@ -1,0 +1,173 @@
+import java.util.function.Predicate
+
+group 'demo'
+version '1.0-SNAPSHOT'
+
+//apply plugin: 'groovy'
+//apply plugin: 'java'
+//apply plugin: 'com.asgradle.apkdist'
+//apply plugin: 'application'
+apply plugin: 'com.android.application'
+//apply plugin: 'org.kordamp.markdown.convert'
+sourceCompatibility = 1.8
+
+import org.gradle.api.plugins.ApplicationPlugin
+import org.gradle.api.plugins.JavaPlugin
+import org.gradle.api.plugins.BasePlugin
+
+repositories {
+    mavenLocal()
+    maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    mavenCentral()
+}
+
+/*
+ * 用于gralde插件
+ */
+buildscript {
+    repositories {
+        mavenLocal()
+        maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven { url 'http://dl.bintray.com/content/aalmiray/kordamp' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'com.asgradle',name: 'hello-gradle',version: '1.0.0'
+        classpath 'org.kordamp:markdown-gradle-plugin:1.0.0'
+        classpath 'com.android.tools.build:gradle:2.3.3'
+    }
+}
+
+
+ext {
+    gson_version = "2.3.1"
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    compile "com.google.code.gson:gson:$gson_version"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.example.zzsoszz.myapplication"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+}
+
+/*
+ * 调用任务
+ */
+//apkdistconf {
+//    nameMap { name ->
+//        println 'hello, ' + name
+//        return name
+//    }
+//    destDir 'your-distribution-directory'
+//}
+
+//tasks.getByName("run") {
+//    doLast {
+//
+//
+//    }
+//}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+}
+
+
+gradle.taskGraph.whenReady  {
+	graph->
+        println "whenRead------------------start"
+        project.getConfigurations().each {
+            println it.getName()
+            it.getDependencies().each {
+                println "getDependencies start"
+                println it.getName()
+                println "getDependencies end"
+            }
+            Closure c=  {
+                return  it.name=='groovy-all22'
+            };
+            it.getDependencies().removeIf(c)
+        }
+        println "whenRead------------------start"
+}
+
+gradle.taskGraph.beforeTask { Task task ->
+    println "executing $task ..."
+}
+
+gradle.taskGraph.afterTask { Task task, TaskState state ->
+    if (state.failure) {
+        println "FAILED"
+    }
+    else {
+        println "done"
+    }
+}
+
+gradle.beforeProject {
+    project->
+        println "hello before project:" +project
+}
+
+gradle.buildFinished {
+    result->
+        println "hello result:" +result
+}
+
+//sourceSets {
+//    main {
+//        java {
+//            exclude 'some/unwanted/package/**'
+//        }
+//    }
+//}
+//
+
+
+//sourceSets {
+//    main {
+//        manifest.srcFile 'AndroidManifest.xml'
+//        aidl.srcDirs = ['src']
+//        renderscript.srcDirs = ['src']
+//        res.srcDirs = ['res']
+//        assets.srcDirs = ['assets']
+//        java {
+//            srcDirs = ['src']
+//            exclude 'some/unwanted/package/**'
+//        }
+//    }
+//    integrationTest {
+//        compileClasspath += sourceSets.test.runtimeClasspath
+//        runtimeClasspath += sourceSets.test.runtimeClasspath
+//    }
+//    instrumentTest.setRoot('tests')
+//}
+//
+
+//mainClassName = 'HelloWorld'
