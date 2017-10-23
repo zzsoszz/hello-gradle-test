@@ -53,6 +53,19 @@ sourceSets{
     }
 }
 
+/*
+apply plugin: 'war'
+sourceSets {
+    main {
+        resources {
+            exclude '**/test/*'
+            exclude 'certs/test'
+        }
+    }
+}
+*/
+
+
 
 /*
  * 调用任务
