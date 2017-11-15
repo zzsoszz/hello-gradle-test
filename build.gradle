@@ -115,5 +115,15 @@ gradle.taskGraph.whenReady  {
         }
 }
 
+task copyRuntimeToLib(type: Copy) {
+    into "libs2"
+    from configurations.runtime
+}
+
+task copyCompileToLib(type: Copy) {
+    into "libs2"
+    from configurations.compile
+}
+
 
 mainClassName = 'HelloWorld'
